@@ -1,0 +1,134 @@
+/* import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.specifications li:last-child {
+  border:none;
+}
+
+
+/*
+shared button styles
+
+here in the CSS you define the padding, rounded corners, borders, casing, tracking etc.
+
+the actual bg color,text color and hover colors are defined within the classes of the actual HTML elements
+ */
+ 
+ .dark-theme {
+  --bg-header-color: theme('colors.transparent');
+  --link-text: theme('colors.secondary.950');
+  --link-text-hover: theme('colors.white');
+  --primary-button-text: theme('colors.white');
+  --primary-button-text-hover: theme('colors.white');
+  --primary-button-border: theme('colors.transparent');
+  --primary-button-border-hover: theme('colors.white');
+  --primary-button-bg: theme('colors.primary.600');
+  --primary-button-bg-hover: theme('colors.primary.700');
+  --secondary-button-text: theme('colors.white');
+  --secondary-button-text-hover: theme('colors.secondary.900');
+  --secondary-button-border: theme('colors.white');
+  --secondary-button-border-hover: theme('colors.transparent');
+  --secondary-button-bg: theme('colors.transparent');
+  --secondary-button-bg-hover: theme('colors.white');
+  --header-breadcrumps: theme('colors.white');
+}
+
+.light-theme {
+  --bg-header-color: theme('colors.white');
+  --link-text: theme('colors.secondary.950');
+  --link-text-hover: theme('colors.secondary.700');
+  --primary-button-text: theme('colors.white');
+  --primary-button-text-hover: theme('colors.white');
+  --primary-button-border: theme('colors.transparent');
+  --primary-button-border-hover: theme('colors.white');
+  --primary-button-bg: theme('colors.primary.600');
+  --primary-button-bg-hover: theme('colors.primary.700');
+  --secondary-button-text: theme('colors.secondary.900');
+  --secondary-button-text-hover: theme('colors.white');
+  --secondary-button-border: theme('colors.secondary.900');
+  --secondary-button-border-hover: theme('colors.transparent');
+  --secondary-button-bg: theme('colors.transparent');
+  --secondary-button-bg-hover: theme('colors.secondary.900');
+  --header-breadcrumps: theme('colors.secondary.900');
+}
+
+
+@layer components {
+  .phone-text {
+    @apply text-xl lg:text-3xl font-semibold uppercase tracking-wide text-link hover:text-link-hover
+  }
+
+  .primary {
+    @apply button button-sm xl:button-lg inline-flex bg-primary-600 text-white hover:bg-primary-500 hover:text-white focus:ring-primary-700
+  }
+
+  .nav-mobile-button{
+    @apply block w-full px-5 py-3 text-center font-medium bg-primary-700 text-white hover:bg-primary-900
+  }
+
+  .button {
+    @apply cursor-pointer items-center justify-center rounded-none border-2 border-transparent px-6 py-2 tracking-wider text-base font-semibold shadow-sm transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+/*
+define different button sizes
+button-sm, button-lg, button-xl etc.
+
+you can change the size of the button per breakpoint
+class="button button-sm md:button-base xl:button-xl"
+*/
+  .button-base {
+    @apply text-base;
+  }
+
+  .button-xs {
+    @apply px-3 py-1 text-xs;
+  }
+
+  .button-sm {
+    @apply px-4 py-1.5 text-sm;
+  }
+
+  .button-lg {
+    @apply px-6 py-2 text-lg;
+  }
+
+  .button-xl {
+    @apply px-7 py-2.5 text-xl;
+  }
+
+  .button-2xl {
+    @apply px-8 py-2.5 text-2xl;
+  }
+}
+
+
+@tailwind utilities;
+
+.pattern-secondary {
+  background-size: 4rem;
+  background-image: url("data:image/svg+xml,%3Csvg fill='%232965ff' fill-opacity='0.66' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 108'%0A%3E%3Cg%3E%3Cg%3E%3Cpolygon points='100 77.81 69.81 108 83.01 108 100 91.01 100 77.81' /%3E%3Cpolygon points='100 106.81 99.41 108 100 108 100 106.81' /%3E%3Cpolygon points='0 77.81 0 91.01 0 91.01 16.99 108 30.19 108 0 77.81 0 77.81' /%3E%3Cpolygon points='0 106.81 0 108 .63 108 .02 106.76 0 106.81' /%3E%3Cpolygon points='9.06 64.75 22.27 64.75 50 37.01 77.73 64.75 90.94 64.75 50 23.81 9.06 64.75' /%3E%3Cpolygon points='55.1 63.11 50.02 52.76 44.9 63.09 33.49 64.73 41.73 72.79 39.75 84.15 49.97 78.81 60.16 84.19 58.24 72.83 66.51 64.79 55.1 63.11' /%3E%3Cpolygon points='72.27 10.75 83.01 0 69.81 0 59.06 10.75 72.27 10.75' /%3E%3Cpolygon points='83.49 10.73 91.73 18.79 89.75 30.15 99.97 24.81 100 24.82 100 0 99.41 0 94.9 9.09 83.49 10.73' /%3E%3Cpolygon points='40.94 10.75 30.19 0 16.99 0 27.73 10.75 40.94 10.75' /%3E%3Cpolygon points='8.24 18.83 16.51 10.79 5.1 9.11 .63 0 0 0 0 24.82 10.16 30.19 8.24 18.83' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+.pattern-gray-light {
+  background-size: 4rem;
+  background-image: url("data:image/svg+xml,%3Csvg fill='%2364748b' fill-opacity='0.15' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 108'%0A%3E%3Cg%3E%3Cg%3E%3Cpolygon points='100 77.81 69.81 108 83.01 108 100 91.01 100 77.81' /%3E%3Cpolygon points='100 106.81 99.41 108 100 108 100 106.81' /%3E%3Cpolygon points='0 77.81 0 91.01 0 91.01 16.99 108 30.19 108 0 77.81 0 77.81' /%3E%3Cpolygon points='0 106.81 0 108 .63 108 .02 106.76 0 106.81' /%3E%3Cpolygon points='9.06 64.75 22.27 64.75 50 37.01 77.73 64.75 90.94 64.75 50 23.81 9.06 64.75' /%3E%3Cpolygon points='55.1 63.11 50.02 52.76 44.9 63.09 33.49 64.73 41.73 72.79 39.75 84.15 49.97 78.81 60.16 84.19 58.24 72.83 66.51 64.79 55.1 63.11' /%3E%3Cpolygon points='72.27 10.75 83.01 0 69.81 0 59.06 10.75 72.27 10.75' /%3E%3Cpolygon points='83.49 10.73 91.73 18.79 89.75 30.15 99.97 24.81 100 24.82 100 0 99.41 0 94.9 9.09 83.49 10.73' /%3E%3Cpolygon points='40.94 10.75 30.19 0 16.99 0 27.73 10.75 40.94 10.75' /%3E%3Cpolygon points='8.24 18.83 16.51 10.79 5.1 9.11 .63 0 0 0 0 24.82 10.16 30.19 8.24 18.83' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+.pattern-blue-light {
+  background-size: 4rem;
+  background-image: url("data:image/svg+xml,%3Csvg fill='blue' fill-opacity='0.2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 108'%0A%3E%3Cg%3E%3Cg%3E%3Cpolygon points='100 77.81 69.81 108 83.01 108 100 91.01 100 77.81' /%3E%3Cpolygon points='100 106.81 99.41 108 100 108 100 106.81' /%3E%3Cpolygon points='0 77.81 0 91.01 0 91.01 16.99 108 30.19 108 0 77.81 0 77.81' /%3E%3Cpolygon points='0 106.81 0 108 .63 108 .02 106.76 0 106.81' /%3E%3Cpolygon points='9.06 64.75 22.27 64.75 50 37.01 77.73 64.75 90.94 64.75 50 23.81 9.06 64.75' /%3E%3Cpolygon points='55.1 63.11 50.02 52.76 44.9 63.09 33.49 64.73 41.73 72.79 39.75 84.15 49.97 78.81 60.16 84.19 58.24 72.83 66.51 64.79 55.1 63.11' /%3E%3Cpolygon points='72.27 10.75 83.01 0 69.81 0 59.06 10.75 72.27 10.75' /%3E%3Cpolygon points='83.49 10.73 91.73 18.79 89.75 30.15 99.97 24.81 100 24.82 100 0 99.41 0 94.9 9.09 83.49 10.73' /%3E%3Cpolygon points='40.94 10.75 30.19 0 16.99 0 27.73 10.75 40.94 10.75' /%3E%3Cpolygon points='8.24 18.83 16.51 10.79 5.1 9.11 .63 0 0 0 0 24.82 10.16 30.19 8.24 18.83' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+.specifications li:last-child {
+  border:none;
+}

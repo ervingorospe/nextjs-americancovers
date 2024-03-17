@@ -21,4 +21,4 @@ npm run start
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## To View The Existing Site
-[`American Covers`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[`American Covers`](https://americancovers-1294-c706fqgjb-modiphy.vercel.app/).
